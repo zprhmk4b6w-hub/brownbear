@@ -1,0 +1,44 @@
+/* Стили режима редактирования внутри окна предпросмотра админки */
+html.ed-mode{scroll-behavior:auto}
+html.ed-mode .page{display:none!important}
+html.ed-mode .page.ed-on{display:block!important;animation:none!important}
+html.ed-mode .rv{opacity:1!important;transform:none!important;transition:none!important}
+html.ed-mode .sv-sec{display:block!important;margin-bottom:48px;padding-top:12px;border-top:2px dashed #e7dcd5}
+html.ed-mode .ctx{display:none!important}
+html.ed-mode .hdr{position:relative!important;top:auto!important}
+html.ed-mode .dock,html.ed-mode .ov,html.ed-mode .mdl,html.ed-mode .lb,html.ed-mode .toast{display:none!important}
+html.ed-mode .sv-nav{position:static!important}
+html.ed-mode .who-l,html.ed-mode .pd-aside{position:static!important}
+html.ed-mode *{cursor:default}
+html.ed-mode a,html.ed-mode button{cursor:pointer}
+html.ed-mode details>summary i{display:none}
+
+/* что скрыто на сайте */
+html.ed-mode [data-ed-hide]{opacity:.42;outline:2px dashed #c98b9c!important;outline-offset:3px;position:relative}
+html.ed-mode .sec[data-ed-hide]::before,html.ed-mode .card[data-ed-hide]::before,html.ed-mode figure[data-ed-hide]::before,html.ed-mode p[data-ed-hide]::before,html.ed-mode .doc[data-ed-hide]::before,html.ed-mode details[data-ed-hide]::before{content:"Скрыто на сайте";position:absolute;z-index:3;left:8px;top:8px;background:#7a2432;color:#fff;font:700 12px/1 Manrope,sans-serif;padding:6px 9px;border-radius:999px;opacity:1}
+
+/* наведение, выбор, редактирование */
+html.ed-mode .ed-hover{outline:2px solid rgba(122,36,50,.35)!important;outline-offset:2px}
+html.ed-mode .ed-sel{outline:2.5px solid #7a2432!important;outline-offset:3px}
+html.ed-mode .ed-editing{outline:2.5px solid #2f7de1!important;outline-offset:3px;cursor:text!important;background-color:rgba(47,125,225,.05)}
+html.ed-mode .ed-editing *{cursor:text!important}
+html.ed-mode img.ed-sel{outline-offset:-3px}
+
+/* заглушки на месте автоматических блоков */
+.ed-ph{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;width:100%;grid-column:1/-1;padding:16px 18px;border:2px dashed #d9c6bd;border-radius:16px;background:#fbf7f4;color:#4d403b;font:650 14px/1.5 Manrope,sans-serif}
+.ed-ph b{color:#2b201d}
+.ed-ph button{height:34px;padding:0 14px;border-radius:999px;background:#7a2432;color:#fff;font:700 13px Manrope,sans-serif;border:0}
+
+/* пустые новые блоки должны быть видны и кликабельны */
+html.ed-mode .vid[data-video=""]::after{content:"Видео не выбрано: выберите блок и вставьте ссылку справа";position:absolute;left:12px;right:12px;bottom:12px;background:rgba(255,255,255,.95);color:#7a2432;font:700 13px/1.4 Manrope,sans-serif;padding:8px 12px;border-radius:10px;text-align:center}
+html.ed-mode .annc[data-ed-hide]{display:block}
+html.ed-mode .annc[data-ed-hide]::before{content:"Объявление скрыто: включается в «Контакты, логотип, объявление»";position:absolute;z-index:3;left:8px;top:50%;transform:translateY(-50%);background:#fff;color:#7a2432;font:700 11.5px/1 Manrope,sans-serif;padding:5px 8px;border-radius:999px;opacity:1}
+html.ed-mode .page[data-ed-hide].ed-on{opacity:1}
+
+/* «шапка, меню и подвал» */
+html.ed-mode.ed-chrome .page{display:none!important}
+html.ed-mode.ed-chrome #next-wrap{display:none}
+html.ed-mode.ed-chrome .mnav{display:block!important;position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;max-width:420px;margin:24px auto;border:1px solid #ece5e0;border-radius:20px;height:auto!important;inset:auto!important}
+html.ed-mode.ed-chrome .dock{display:flex!important;position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;max-width:420px;margin:0 auto 24px}
+html.ed-mode.ed-chrome .ed-chrome-t{display:block}
+.ed-chrome-t{display:none;max-width:1200px;margin:28px auto 0;padding:0 28px;font:800 15px Manrope,sans-serif;color:#7a2432}
